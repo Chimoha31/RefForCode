@@ -1,11 +1,13 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
+import cartItems from "../cartItems";
+import CartItem from "./CartItem";
 
 const CartContainer = () => {
-  const {amount} = useSelector((store) => store.cart);
-  console.log(amount);
+  const { amount, cartItems, total } = useSelector((store) => store.cart);
+  console.log(cartItems);
 
-  if(amount <= 0) {
+  if (amount <= 0) {
     return (
       <section className="cart">
         <header>
@@ -13,8 +15,30 @@ const CartContainer = () => {
           <h4 className="empty-cart">There is no item in your cart</h4>
         </header>
       </section>
-    )
+    );
   }
-}
 
-export default CartContainer
+  return (
+    <section className="cart">
+      <header>
+        <h2>Shopping Cart</h2>
+      </header>
+      <div>
+        {cartItems.map((item) => {
+          return <CartItem key={item.id} {...item} />;
+        })}
+      </div>
+      <footer>
+        <hr />
+        <div className="cart-total">
+          <h4>
+            Total: <span>CA${total}</span>
+          </h4>
+        </div>
+        <button className="btn clear-btn">Delete All</button>
+      </footer>
+    </section>
+  );
+};
+
+export default CartContainer;
