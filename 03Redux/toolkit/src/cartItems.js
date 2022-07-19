@@ -4,7 +4,7 @@ const cartItems = [
     title: "Next.js入門講座",
     price: "120",
     img: "https://images.unsplash.com/photo-1588912914017-923900a34710?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1838&q=80",
-    amount: 1,
+    amount: 2,
   },
   {
     id: 2,
