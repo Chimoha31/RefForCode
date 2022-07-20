@@ -11,6 +11,7 @@ const App = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const {isOpen} = useSelector((state) => state.modal);
 
+  // カート情報が変化する度に発火するようにする（いちいち1つずつcalculateTotals()を付けないようにする）
   useEffect(() => {
     dispatch(calculateTotals());
     // eslint-disable-next-line
