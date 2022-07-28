@@ -16,7 +16,7 @@ const cartSlice = createSlice({
       return { cartItems: [], amount: 0, total: 0 };
     },
     removeItem: (state, action) => {
-      // actionはtypeとpayloadを含む
+      // actionはtypeとpayloadを含む payloadは()に入るもの。idとか
       console.log(action)
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter((item) => item.id !== itemId)
